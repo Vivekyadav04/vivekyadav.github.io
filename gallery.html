@@ -12,6 +12,54 @@
         .gallery { display: flex; flex-wrap: wrap; justify-content: center; }
         .gallery img { margin: 10px; width: 200px; height: 150px; object-fit: cover; cursor: pointer; }
         .back-link { display: block; margin: 20px; text-align: center; }
+        
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            overflow: auto;
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+        }
+
+        .modal-content, .modal {
+            animation-name: zoom;
+            animation-duration: 0.6s;
+        }
+
+        @keyframes zoom {
+            from {transform: scale(0)}
+            to {transform: scale(1)}
+        }
+
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -23,21 +71,59 @@
         <div class="gallery">
             <!-- Replace 'image1.jpg', 'image2.jpg', etc. with your actual image file paths -->
             <img src="ieso.jpeg" alt="IESO">
-             <img src="ieso.1.jpeg" alt="IESO">
-             <img src="ieso.2.jpeg" alt="IESO2">
-             <img src="ieso.3.jpeg" alt="IESO3">
-             <img src="ieso.4.jpeg" alt="IESO4">
+            <img src="ieso.1.jpeg" alt="IESO1">
+            <img src="ieso.2.jpeg" alt="IESO2">
+            <img src="ieso.3.jpeg" alt="IESO3">
+            <img src="ieso.4.jpeg" alt="IESO4">
             <img src="ieso.5.jpeg" alt="IESO5">
-             <img src="ieso.6.jpeg" alt="IESO6">
+            <img src="ieso.6.jpeg" alt="IESO6">
             <img src="ieso.7.jpeg" alt="IESO7">
-              <img src="ieso.8.jpeg" alt="IESO8">
-               <img src="ieso.9.jpeg" alt="IESO9">
-             <img src="ieso.10.jpeg" alt="IESO10">
-             <img src="ieso.11.jpeg" alt="IESO11">
-              <img src="ieso.12.jpeg" alt="IESO12">
+            <img src="ieso.8.jpeg" alt="IESO8">
+            <img src="ieso.9.jpeg" alt="IESO9">
+            <img src="ieso.11.jpeg" alt="IESO11">
+            <img src="ieso.12.jpeg" alt="IESO12">
         </div>
         <a href="index.html" class="back-link">Back to Profile</a>
     </div>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01">
+    </div>
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+
+        // Get the modal image
+        var modalImg = document.getElementById("img01");
+
+        // Get all images in the gallery
+        var images = document.querySelectorAll(".gallery img");
+
+        // Loop through images to add click event listener
+        images.forEach(function(image) {
+            image.onclick = function() {
+                modal.style.display = "block";
+                modalImg.src = this.src;
+            }
+        });
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() { 
+            modal.style.display = "none";
+        }
+
+        // Close the modal when user clicks outside of the modal image
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
 </body>
 </html>
-
