@@ -12,11 +12,11 @@
         .contact-info { position: absolute; top: 20px; right: 20px; text-align: left; }
         .contact-info p { margin: 5px 0; }
         .linkedin-icon { position: absolute; top: 20px; left: 20px; width: 30px; cursor: pointer; }
-         .gallery-icon { position: absolute; top: 60px; left: 20px; width: 30px; cursor: pointer; }
+        .gallery-icon { position: absolute; top: 60px; left: 20px; width: 30px; cursor: pointer; }
         .container {
             padding: 20px;
         }
-        .summary, .achievements { margin: 20px 0; }
+        .summary, .achievements, .presentation { margin: 20px 0; }
         .section-header { cursor: pointer; background-color: #f1f1f1; padding: 10px; border: 1px solid #ddd; }
         .section-content { display: none; padding: 10px 20px; border-top: 1px solid #ddd; }
     </style>
@@ -73,6 +73,16 @@
                 </ul>
             </div>
         </section>
+
+        <!-- New Presentation Section -->
+        <section class="presentation">
+            <div class="section-header" onclick="toggleSection('presentation-content')">
+                <h2>Presentation</h2>
+            </div>
+            <div id="presentation-content" class="section-content">
+                <p><a href="presentation.html" target="_blank">My Presentation</a></p>
+            </div>
+        </section>
     </div>
 
     <script>
@@ -88,7 +98,8 @@
         function openLinkedIn() {
             window.open("https://www.linkedin.com/in/vivek-yadav-6b141a126/", "_blank");
         }
-         function openGallery() {
+
+        function openGallery() {
             window.location.href = "gallery.html"; // Link to the new gallery page
         }
     </script>
