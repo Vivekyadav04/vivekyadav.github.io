@@ -10,7 +10,7 @@
         header { background-color: #4CAF50; color: white; padding: 20px; text-align: center; }
         .container { padding: 20px; }
         .gallery { display: flex; flex-wrap: wrap; justify-content: center; }
-        .gallery img { margin: 10px; width: 200px; height: 150px; object-fit: cover; cursor: pointer; }
+        .gallery img, .gallery video { margin: 10px; width: 200px; height: 150px; object-fit: cover; cursor: pointer; }
         .back-link { display: block; margin: 20px; text-align: center; }
         
         /* Modal Styles */
@@ -69,9 +69,10 @@
     </header>
     <div class="container">
         <div class="gallery">
-            <!-- Replace 'image1.jpg', 'image2.jpg', etc. with your actual image file paths -->
+            <!-- Replace 'image1.jpg', 'video.mp4', etc. with your actual file paths -->
             <img src="ieso.jpeg" alt="IESO">
             <img src="ieso.1.jpeg" alt="IESO1">
+            <video src="yourvideo.mp4" alt="Sample Video" controls muted></video>
             <img src="ieso.2.jpeg" alt="IESO2">
             <img src="ieso.3.jpeg" alt="IESO3">
             <img src="ieso.4.jpeg" alt="IESO4">
@@ -80,8 +81,10 @@
             <img src="ieso.7.jpeg" alt="IESO7">
             <img src="ieso.8.jpeg" alt="IESO8">
             <img src="ieso.9.jpeg" alt="IESO9">
+            <img src="ieso.10.jpeg" alt="IESO10">
             <img src="ieso.11.jpeg" alt="IESO11">
             <img src="ieso.12.jpeg" alt="IESO12">
+            <!-- Add more images and videos as needed -->
         </div>
         <a href="index.html" class="back-link">Back to Profile</a>
     </div>
@@ -90,23 +93,38 @@
     <div id="myModal" class="modal">
         <span class="close">&times;</span>
         <img class="modal-content" id="img01">
+        <video class="modal-content" id="video01" controls style="display: none;"></video>
     </div>
 
     <script>
         // Get the modal
         var modal = document.getElementById("myModal");
 
-        // Get the modal image
+        // Get the modal image and video
         var modalImg = document.getElementById("img01");
+        var modalVideo = document.getElementById("video01");
 
-        // Get all images in the gallery
+        // Get all images and videos in the gallery
         var images = document.querySelectorAll(".gallery img");
+        var videos = document.querySelectorAll(".gallery video");
 
         // Loop through images to add click event listener
         images.forEach(function(image) {
             image.onclick = function() {
                 modal.style.display = "block";
                 modalImg.src = this.src;
+                modalImg.style.display = "block";
+                modalVideo.style.display = "none";
+            }
+        });
+
+        // Loop through videos to add click event listener
+        videos.forEach(function(video) {
+            video.onclick = function() {
+                modal.style.display = "block";
+                modalVideo.src = this.src;
+                modalVideo.style.display = "block";
+                modalImg.style.display = "none";
             }
         });
 
@@ -116,12 +134,14 @@
         // When the user clicks on <span> (x), close the modal
         span.onclick = function() { 
             modal.style.display = "none";
+            modalVideo.pause(); // Pause the video when closing the modal
         }
 
-        // Close the modal when user clicks outside of the modal image
+        // Close the modal when user clicks outside of the modal content
         window.onclick = function(event) {
             if (event.target == modal) {
                 modal.style.display = "none";
+                modalVideo.pause(); // Pause the video when closing the modal
             }
         }
     </script>
