@@ -16,11 +16,26 @@
         .container {
             padding: 20px;
         }
-        .summary, .achievements, .presentation { margin: 20px 0; }
+        .summary, .achievements, .presentation, .testimonials { margin: 20px 0; }
         .section-header { cursor: pointer; background-color: #f1f1f1; padding: 10px; border: 1px solid #ddd; }
         .section-content { display: none; padding: 10px 20px; border-top: 1px solid #ddd; }
+
+        /* Testimonial Form Styles */
+        .testimonial-form { margin-top: 20px; }
+        .testimonial-form label { display: block; margin-bottom: 5px; font-weight: bold; }
+        .testimonial-form input[type="file"] { margin-bottom: 15px; }
+        .testimonial-form textarea { width: 100%; height: 100px; margin-bottom: 15px; }
+        .star-rating { display: flex; flex-direction: row-reverse; justify-content: flex-end; }
+        .star-rating input { display: none; }
+        .star-rating label { font-size: 25px; color: gray; cursor: pointer; }
+        .star-rating input:checked ~ label { color: gold; }
+        .star-rating input:checked ~ label:hover { color: darkorange; }
+        .star-rating label:hover, .star-rating label:hover ~ label { color: gold; }
+        .submit-btn { padding: 10px 20px; background-color: #4CAF50; color: white; border: none; cursor: pointer; }
+        .submit-btn:hover { background-color: #45a049; }
     </style>
 </head>
+    
 <body>
     <header>
         <img src="linkedin.png" alt="LinkedIn Icon" class="linkedin-icon" onclick="openLinkedIn()">
@@ -85,7 +100,32 @@
                   <p><a href="GiftedTalented.html" target="_blank">Gifted & Talented Children Session</a></p>
             </div>
         </section>
-   
+
+         <section class="testimonials">
+            <div class="section-header" onclick="toggleSection('testimonial-content')">
+                <h2>Testimonials</h2>
+            </div>
+            <div id="testimonial-content" class="section-content">
+                <form class="testimonial-form" id="testimonialForm">
+                    <label for="photo">Upload Your Photo:</label>
+                    <input type="file" id="photo" name="photo" accept="image/*" required>
+                    
+                    <label>Rate Us:</label>
+                    <div class="star-rating">
+                        <input type="radio" id="5-stars" name="rating" value="5" required><label for="5-stars">&#9733;</label>
+                        <input type="radio" id="4-stars" name="rating" value="4"><label for="4-stars">&#9733;</label>
+                        <input type="radio" id="3-stars" name="rating" value="3"><label for="3-stars">&#9733;</label>
+                        <input type="radio" id="2-stars" name="rating" value="2"><label for="2-stars">&#9733;</label>
+                        <input type="radio" id="1-star" name="rating" value="1"><label for="1-star">&#9733;</label>
+                    </div>
+
+                    <label for="comment">Your Comments:</label>
+                    <textarea id="comment" name="comment" placeholder="Write your feedback here..." required></textarea>
+
+                    <button type="submit" class="submit-btn">Submit Testimonial</button>
+                </form>
+            </div>
+        </section>
   </div>
 
     <script>
@@ -105,6 +145,12 @@
         function openGallery() {
             window.location.href = "gallery.html"; // Link to the new gallery page
         }
+         document.getElementById('testimonialForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Thank you for your feedback!');
+            this.reset();
+        });
+ 
     </script>
 </body>
 </html>
