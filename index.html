@@ -10,16 +10,16 @@
         header { background-color: #4CAF50; color: white; padding: 20px; text-align: center; position: relative; }
         .profile-picture { border-radius: 50%; width: 150px; margin-top: 20px; }
         .contact-info {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    text-align: left;
-    font-size: 25px; /* Increase this value to adjust the font size */
-}
-.contact-info a {
-    font-size: 25px; /* Increase font size of the email link */
-}
-         .linkedin-icon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            text-align: left;
+            font-size: 25px; /* Increase this value to adjust the font size */
+        }
+        .contact-info a {
+            font-size: 25px; /* Increase font size of the email link */
+        }
+        .linkedin-icon {
             position: absolute;
             top: 20px;
             left: 20px;
@@ -49,8 +49,7 @@
 
 <body>
 
-    <header>
-    <!-- LinkedIn Icon with Text -->
+<header>
     <div class="icon-container linkedin-container">
         <img src="linkedin.png" alt="LinkedIn Icon" class="linkedin-icon" onclick="openLinkedIn()">
     </div>
@@ -64,13 +63,13 @@
     </div>
 </header>
 
-  <div class="container">
-        <section class="summary">
-            <div class="section-header" onclick="toggleSection('summary-content')">
-                <h2>Professional Summary</h2>
-            </div>
-            <div id="summary-content" class="section-content">
-               <h3>Vivek Yadav</h3>
+<div class="container">
+    <section class="summary">
+        <div class="section-header" onclick="toggleSection('summary-content')">
+            <h2>Professional Summary</h2>
+        </div>
+        <div id="summary-content" class="section-content">
+            <h3>Vivek Yadav</h3>
             <p><strong>Dedicated Academic Mentor for Students Aged 9-16 | International Olympiad Mentor</strong></p>
             <p>With over a decade of experience nurturing and guiding gifted and talented students, I specialize in
                 mentoring those who have represented India in various international Olympiads. My focus is on developing
@@ -82,88 +81,98 @@
                 <li><strong>IOQM (Indian Olympiad Qualifier in Mathematics)</strong></li>
                 <li><strong>NMTC (National Mathematics Talent Contest)</strong></li>
             </ul>
-        </section>
+        </div>
+    </section>
 
-  <!-- Gallery Section -->
-        <section class="gallery">
-            <div class="section-header" onclick="toggleSection('gallery-content')">
-                <h2>Gallery</h2>
-            </div>
-            <div id="gallery-content" class="section-content">
-               <p><a href="gallery.html" target="_blank"><strong>Gallery Photos</strong></a></p>
-            </div>
-        </section>
-        <section class="achievements">
-            <div class="section-header" onclick="toggleSection('achievements-content')">
-                <h2>Achievements</h2>
-            </div>
-            <div id="achievements-content" class="section-content">
-                 <ul>
-            <li><strong>IESO 2024-25:</strong> One student <strong>Yashaswee Gupta</strong> won <strong>BRONZE Medal</strong> for Team India held in Beijing.</li>
-            <li><strong>IJSO 2023-24:</strong> Out of the top 36 students, 4 students—<strong>Vaibhav Rai, Mitul Agarwal, Rachit Goyal, Kovid Singhal</strong>—were selected for the National Camp held in Bangalore.</li>
-            <li><strong>IMOTC & EGMOTC 2023-2024:</strong> <strong>Stage-4 of International Mathematics Olympiad</strong>: <strong>Chyanika Mandal</strong>.</li>
-            <li><strong>IJSO 2022-23:</strong> Out of the top 36 students, 5 students—<strong>Akshat Agarwal, Chayanika Mandal, Lakshit Sinsinwar, Mahak Gupta, Rachit Goyal</strong>—were selected for the National Camp held in Mumbai HBCSE.</li>
-            <li><strong>IIT JEE 2021:</strong> <strong>Mridul Agarwal(AIR #1), Aditya Nemiwal(AIR #29), Rajat Golecha(AIR #76), Dhruv Gupta(AIR #170)</strong>.</li>
-            <li><strong>NEET UG 2021:</strong> <strong>Naman Singh(AIR #75), Aniruddh Agarwal(AIR #92)</strong>.</li>
-            <li><strong>NTSE 2020-21 (Stage 2):</strong> 65 students selected.</li>
-            <li><strong>IOQJS 2020-21:</strong> 4 students selected.</li>
-            <li><strong>NTSE 2020-21 (Stage 1):</strong> 103 students selected.</li>
-            <li><strong>KVPY Fellowship 2020:</strong> 72 students selected.</li>
-            <li><strong>NTSE 2019:</strong> 75 students selected.</li>
-            <li><strong>National Olympiad 2018 (Stage 1):</strong> 45 students selected.</li>
-            <li><strong>NTSE 2018 (Stage 2):</strong> 68 students selected.</li>
-            <li><strong>NTSE 2017 (Stage 2):</strong> 48 students selected.</li>
-            <li><strong>NTSE 2016 (Stage 2):</strong> 50 students selected.</li>
-            <li><strong>NTSE 2015 (Stage 2):</strong> 34 students selected.</li>
-            <li><strong>IJSO 2014 (South Korea):</strong> 1 student selected.</li>
-            <li><strong>IJSO 2014:</strong> 1 student selected.</li>
-            <li><strong>NTSE 2014:</strong> 71 students selected, <strong>OCSC 2014:</strong> 4 students selected, <strong>NSEJS 2014:</strong> 7 students selected.</li>
-            <li><strong>INJSO 2012-2013:</strong> 3 students selected.</li>
-            <li><strong>NSEJS 2012-2013:</strong> 5 students selected.</li>
-            <li><strong>NTSE 2011-2013:</strong> Over 50 students selected.</li>
-        </ul>
-            </div>
-        </section>
+    <!-- Gallery Section -->
+    <section class="gallery">
+        <div class="section-header" onclick="toggleSection('gallery-content')">
+            <h2>Gallery</h2>
+        </div>
+        <div id="gallery-content" class="section-content">
+            <p><a href="gallery.html" target="_blank"><strong>Gallery Photos</strong></a></p>
+        </div>
+    </section>
 
-        <!-- New Presentation Section -->
-        <section class="presentation">
-            <div class="section-header" onclick="toggleSection('presentation-content')">
-                <h2>Presentation</h2>
-            </div>
-            <div id="presentation-content" class="section-content">
-               <p><a href="presentation.html" target="_blank"><strong>Olympiad Session</strong></a></p>
-<p><a href="presentationInductionSession.html" target="_blank"><strong>Induction Session</strong></a></p>
-<p><a href="GiftedTalented.html" target="_blank"><strong>Gifted & Talented Children Session</strong></a></p>
-<p><a href="Neurodiversity.html" target="_blank"><strong>Nuerodiversity in Education</strong></a></p>
-            </div>
-        </section>
+    <section class="achievements">
+        <div class="section-header" onclick="toggleSection('achievements-content')">
+            <h2>Achievements</h2>
+        </div>
+        <div id="achievements-content" class="section-content">
+            <ul>
+                <li><strong>IESO 2024-25:</strong> One student <strong>Yashaswee Gupta</strong> won <strong>BRONZE Medal</strong> for Team India held in Beijing.</li>
+                <li><strong>IJSO 2023-24:</strong> Out of the top 36 students, 4 students—<strong>Vaibhav Rai, Mitul Agarwal, Rachit Goyal, Kovid Singhal</strong>—were selected for the National Camp held in Bangalore.</li>
+                <li><strong>IMOTC & EGMOTC 2023-2024:</strong> <strong>Stage-4 of International Mathematics Olympiad</strong>: <strong>Chyanika Mandal</strong>.</li>
+                <li><strong>IJSO 2022-23:</strong> Out of the top 36 students, 5 students—<strong>Akshat Agarwal, Chayanika Mandal, Lakshit Sinsinwar, Mahak Gupta, Rachit Goyal</strong>—were selected for the National Camp held in Mumbai HBCSE.</li>
+                <li><strong>IIT JEE 2021:</strong> <strong>Mridul Agarwal(AIR #1), Aditya Nemiwal(AIR #29), Rajat Golecha(AIR #76), Dhruv Gupta(AIR #170)</strong>.</li>
+                <li><strong>NEET UG 2021:</strong> <strong>Naman Singh(AIR #75), Aniruddh Agarwal(AIR #92)</strong>.</li>
+                <li><strong>NTSE 2020-21 (Stage 2):</strong> 65 students selected.</li>
+                <li><strong>IOQJS 2020-21:</strong> 4 students selected.</li>
+                <li><strong>NTSE 2020-21 (Stage 1):</strong> 103 students selected.</li>
+                <li><strong>KVPY Fellowship 2020:</strong> 72 students selected.</li>
+                <li><strong>NTSE 2019:</strong> 75 students selected.</li>
+                <li><strong>National Olympiad 2018 (Stage 1):</strong> 45 students selected.</li>
+                <li><strong>NTSE 2018 (Stage 2):</strong> 68 students selected.</li>
+                <li><strong>NTSE 2017 (Stage 2):</strong> 48 students selected.</li>
+                <li><strong>NTSE 2016 (Stage 2):</strong> 50 students selected.</li>
+                <li><strong>NTSE 2015 (Stage 2):</strong> 34 students selected.</li>
+                <li><strong>IJSO 2014 (South Korea):</strong> 1 student selected.</li>
+                <li><strong>IJSO 2014:</strong> 1 student selected.</li>
+                <li><strong>NTSE 2014:</strong> 71 students selected, <strong>OCSC 2014:</strong> 4 students selected, <strong>NSEJS 2014:</strong> 7 students selected.</li>
+                <li><strong>INJSO 2012-2013:</strong> 3 students selected.</li>
+                <li><strong>NSEJS 2012-2013:</strong> 5 students selected.</li>
+                <li><strong>NTSE 2011-2013:</strong> Over 50 students selected.</li>
+            </ul>
+        </div>
+    </section>
 
+    <!-- New Presentation Section -->
+    <section class="presentation">
+        <div class="section-header" onclick="toggleSection('presentation-content')">
+            <h2>Presentation</h2>
+        </div>
+        <div id="presentation-content" class="section-content">
+            <p><a href="presentation.html" target="_blank"><strong>Olympiad Session</strong></a></p>
+            <p><a href="presentationInductionSession.html" target="_blank"><strong>Induction Session</strong></a></p>
+            <p><a href="GiftedTalented.html" target="_blank"><strong>Gifted & Talented Children Session</strong></a></p>
+            <p><a href="Neurodiversity.html" target="_blank"><strong>Nuerodiversity in Education</strong></a></p>
+        </div>
+    </section>
 
-  </div>
+</div>
 
-    <script>
-        function toggleSection(sectionId) {
-            const section = document.getElementById(sectionId);
-            if (section.style.display === "none" || section.style.display === "") {
-                section.style.display = "block";
-            } else {
-                section.style.display = "none";
+<script>
+    function toggleSection(sectionId) {
+        const sections = document.querySelectorAll('.section-content');
+        sections.forEach((section) => {
+            // Close all sections
+            if (section.id !== sectionId) {
+                section.style.display = 'none';
             }
-        }
-
-        function openLinkedIn() {
-            window.open("https://www.linkedin.com/in/vivek-yadav-6b141a126/", "_blank");
-        }
-
-        function openGallery() {
-            window.location.href = "gallery.html"; // Link to the new gallery page
-        }
-         document.getElementById('testimonialForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            alert('Thank you for your feedback!');
-            this.reset();
         });
 
-    </script>
+        const sectionToToggle = document.getElementById(sectionId);
+        // Toggle the clicked section
+        if (sectionToToggle.style.display === "none" || sectionToToggle.style.display === "") {
+            sectionToToggle.style.display = "block";
+        } else {
+            sectionToToggle.style.display = "none";
+        }
+    }
+
+    function openLinkedIn() {
+        window.open("https://www.linkedin.com/in/vivek-yadav-6b141a126/", "_blank");
+    }
+
+    function openGallery() {
+        window.location.href = "gallery.html"; // Link to the new gallery page
+    }
+
+    document.getElementById('testimonialForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        alert('Thank you for your feedback!');
+        this.reset();
+    });
+</script>
 </body>
 </html>
